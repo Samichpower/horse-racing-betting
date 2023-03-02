@@ -1,4 +1,20 @@
-//WHAT DOES THIS PROJECT ENTAIL EXACTLY?
-//Simple game with five horses racing. The player begins with $1,000 and is betting with 50 other people on which horse they think will win. They all have to enter the same amount and the pool is split evenly.
-//During each course, there are 10 rounds, and in each course a single random horse has a slight advantage for all 10 rounds. 
+let doGame = confirm("Would you like to gamble on horses?")
+
+function startGame() {
+  let playersMoney = 250;
+  let roundCounter = 0;
+  while (doGame == true) {
+    let playersHorse = prompt("Which horse would you like to bet on? Red, Blue, Green, Purple, or Yellow?");
+    playersHorse = playersHorse.toUpperCase();
+
+    let playersBets = prompt(`How many bets would you like to place on the ${playersHorse} horse? CURRENT BALANCE: $${playersMoney}`);
+    playersMoney = playersMoney - (playersBets * 10);
+    console.log("You have placed $" + playersBets * 10 + " on the " + playersHorse + " horse.");
+  }
+}
+
+if (doGame == true) {
+  startGame()
+} 
+
 
