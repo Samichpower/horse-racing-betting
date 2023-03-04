@@ -29,9 +29,11 @@ function capFirstLetter(word) {
 
 
 
+
+
 function startGame() {
   let playersMoney = 250;
-  for (let roundCount = 1; roundCount < 6; roundCount++) {
+  for (let roundCount = 1; roundCount < 11; roundCount++) {
     //GET PLAYERS HORSE OF CHOICE
     let playersHorse = prompt("Which horse would you like to bet on? Red, Blue, Green, Purple, or Yellow?");
     playersHorse = capFirstLetter(playersHorse);
@@ -55,18 +57,27 @@ function startGame() {
     let yellowBets = totalBets / 5;
     
     //ADDS PLAYERSBETS TO HORSEBETS
-    if (playersHorse == "red") {
+    if (playersHorse == "Red") {
       redBets = redBets + playersBets;
-    } else if (playersHorse == "blue") {
+    } else if (playersHorse == "Blue") {
       blueBets = blueBets + playersBets;
-    } else if (playersHorse == "green") {
+    } else if (playersHorse == "Green") {
       greenBets = greenBets + playersBets;
-    } else if (playersHorse == "purple") {
+    } else if (playersHorse == "Purple") {
       purpleBets = purpleBets + playersBets;
-    } else if (playersHorse == "yellow") {
+    } else if (playersHorse == "Yellow") {
       yellowBets = yellowBets + playersBets;
     }
 
+    function getPlayersWinnings(colorBets) {
+      return playersMoney + (1000 / colorBets) * playersBets;
+    }
+
+    if (winningHorse == "Red" && playersHorse == "Red") {
+      playersMoney = getPlayersWinnings(redBets);
+    }
+
+    console.log(`CURRENT MONEY: $` + playersMoney);
     
 
 
