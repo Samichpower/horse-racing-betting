@@ -25,6 +25,7 @@ The game will play 10 times, each end will add +1 to roundCounter, and then give
 BETTING
 There are 100 bets total. Each is worth $10. The player can place as many bets as they want, and the rest of the bets will be randomly distributed between the horses.
 
+How does this betting system work? There are 100 bets total, worth $10 each, $1000 total. Say its spread between the 5 horses equally. That means 20 bets are worth $1000 total, or $50 a piece. Need to make a formula to get this. 
 
-RACING
-There are 5 horses total.
+BET DISTRIBUTION: totalBets - playersBets, divide that by 5, then add playersBets to the playersHorse bets count. 
+CALCULATE WINNINGS: ($1000/winning horse bets). That gets the value of the winning horses bets. Get the number of playersBets placed on that horse and multiply it by the value. 
