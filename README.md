@@ -29,3 +29,22 @@ How does this betting system work? There are 100 bets total, worth $10 each, $10
 
 BET DISTRIBUTION: totalBets - playersBets, divide that by 5, then add playersBets to the playersHorse bets count. 
 CALCULATE WINNINGS: ($1000/winning horse bets). That gets the value of the winning horses bets. Get the number of playersBets placed on that horse and multiply it by the value. 
+
+
+
+Add confirmation displaying your horse choice and bet. Ok will allow the round to play, cancel will allow you to change your bet. Perhaps a while loop.
+
+
+
+
+ROUND 1
+CURRENT MONEY: $250
+You placed $20 on the Red horse.
+Blue wins! You won $0
+BETTING BREAKDOWN
+Red: 28
+Blue: 18
+Green: 18
+Purple: 18
+Yellow: 18
+-----------------
