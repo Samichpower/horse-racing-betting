@@ -45,7 +45,6 @@ function startGame() {
     
     let winningHorse = getWinningHorse();
     console.log("You have placed $" + playersBets * 10 + " on the " + playersHorse + " horse.");
-    console.log(winningHorse + " wins!");
 
     //BET DISTRIBUTION
     let totalBets = 100 - playersBets;
@@ -70,22 +69,30 @@ function startGame() {
     }
 
     function getPlayersWinnings(colorBets) {
-      return Math.ceil(playersMoney + ((1000 / colorBets) * playersBets));
+      return Math.ceil((1000 / colorBets) * playersBets);
     }
+
+    let playerWinnings = 0;
 
     //CALCULATES PLAYERS WINNINGS AND ADDS TO THEIR TOTAL
     if (winningHorse == "Red" && playersHorse == "Red") {
-      playersMoney = getPlayersWinnings(redBets);
+      playerWinnings = getPlayersWinnings(redBets);
+      playersMoney += getPlayersWinnings(redBets);
     } else if (winningHorse == "Blue" && playersHorse == "Blue") {
-      playersMoney = getPlayersWinnings(blueBets);
+      playerWinnings = getPlayersWinnings(blueBets);
+      playersMoney += getPlayersWinnings(blueBets);
     } else if (winningHorse == "Green" && playersHorse == "Green") {
-      playersMoney = getPlayersWinnings(greenBets);
+      playerWinnings = getPlayersWinnings(greenBets);
+      playersMoney += getPlayersWinnings(greenBets);
     } else if (winningHorse == "Purple" && playersHorse == "Purple") {
-      playersMoney = getPlayersWinnings(purpleBets);
+      playerWinnings = getPlayersWinnings(purpleBets);
+      playersMoney += getPlayersWinnings(purpleBets);
     } else if (winningHorse == "Yellow" && playersHorse == "Yellow") {
-      playersMoney = getPlayersWinnings(yellowBets);
+      playerWinnings = getPlayersWinnings(yellowBets);
+      playersMoney += getPlayersWinnings(yellowBets);
     }
 
+    console.log(winningHorse + " wins! You won $" + playerWinnings);
     console.log(`CURRENT MONEY: $` + playersMoney);
     
 
