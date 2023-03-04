@@ -75,6 +75,14 @@ function startGame() {
 
     if (winningHorse == "Red" && playersHorse == "Red") {
       playersMoney = getPlayersWinnings(redBets);
+    } else if (winningHorse == "Blue" && playersHorse == "Blue") {
+      playersMoney = getPlayersWinnings(blueBets);
+    } else if (winningHorse == "Green" && playersHorse == "Green") {
+      playersMoney = getPlayersWinnings(greenBets);
+    } else if (winningHorse == "Purple" && playersHorse == "Purple") {
+      playersMoney = getPlayersWinnings(purpleBets);
+    } else if (winningHorse == "Yellow" && playersHorse == "Yellow") {
+      playersMoney = getPlayersWinnings(yellowBets);
     }
 
     console.log(`CURRENT MONEY: $` + playersMoney);
