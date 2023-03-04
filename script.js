@@ -29,11 +29,11 @@ function capFirstLetter(word) {
 function startGame() {
   let playersMoney = 250;
   for (let roundCount = 1; roundCount < 11; roundCount++) {
-    console.log("--ROUND " + roundCount + "--");
+    console.log("-----ROUND " + roundCount + "-----");
     console.log("CURRENT MONEY: $" + playersMoney);
 
     //GET PLAYERS HORSE OF CHOICE
-    let playersHorse = prompt("Which horse would you like to bet on? Red, Blue, Green, Purple, or Yellow?");
+    let playersHorse = prompt("CURRENT MONEY: $" + playersMoney + ". Which horse would you like to bet on? Red, Blue, Green, Purple, or Yellow?");
     playersHorse = capFirstLetter(playersHorse);
 
     //GET PLAYERS BETS
@@ -93,5 +93,7 @@ function startGame() {
     console.log(winningHorse + " wins! You won $" + playerWinnings);
     console.log("Betting Breakdown:");
     console.log("Red: " + redBets + ". Blue: " + blueBets + ". Green: " + greenBets + ". Purple: " + purpleBets + ". Yellow: " + yellowBets);
+    alert(winningHorse + " wins! You won $" + playerWinnings);
+    console.log(" ")
   }
 }
