@@ -70,9 +70,10 @@ function startGame() {
     }
 
     function getPlayersWinnings(colorBets) {
-      return playersMoney + (1000 / colorBets) * playersBets;
+      return Math.ceil(playersMoney + ((1000 / colorBets) * playersBets));
     }
 
+    //CALCULATES PLAYERS WINNINGS AND ADDS TO THEIR TOTAL
     if (winningHorse == "Red" && playersHorse == "Red") {
       playersMoney = getPlayersWinnings(redBets);
     } else if (winningHorse == "Blue" && playersHorse == "Blue") {
