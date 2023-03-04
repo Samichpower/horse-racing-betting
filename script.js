@@ -22,20 +22,28 @@ function getWinningHorse() {
 }
 
 
+function capFirstLetter(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+
+
 
 
 function startGame() {
   let playersMoney = 250;
   for (let roundCount = 1; roundCount < 6; roundCount++) {
+    //GET PLAYERS HORSE OF CHOICE
     let playersHorse = prompt("Which horse would you like to bet on? Red, Blue, Green, Purple, or Yellow?");
-    playersHorse = playersHorse.toLowerCase();
+    playersHorse = capFirstLetter(playersHorse);
 
+    //GET PLAYERS BETS
     let playersBets = prompt(`How many bets would you like to place on the ${playersHorse} horse? CURRENT BALANCE: $${playersMoney}`);
     playersBets = Number(playersBets);
-    
     playersMoney = playersMoney - (playersBets * 10);
+    
+    let winningHorse = getWinningHorse();
     console.log("You have placed $" + playersBets * 10 + " on the " + playersHorse + " horse.");
-    console.log(getWinningHorse() + " wins!");
+    console.log(winningHorse + " wins!");
 
     //BET DISTRIBUTION
     let totalBets = 100 - playersBets;
@@ -45,8 +53,6 @@ function startGame() {
     let greenBets = totalBets / 5;
     let purpleBets = totalBets / 5;
     let yellowBets = totalBets / 5;
-
-    console.log(typeof playersBets);
     
     //ADDS PLAYERSBETS TO HORSEBETS
     if (playersHorse == "red") {
@@ -61,7 +67,10 @@ function startGame() {
       yellowBets = yellowBets + playersBets;
     }
 
-    // console.log(typeof Number(playersBets))
+    
+
+
+
     console.log(redBets, blueBets, greenBets, purpleBets, yellowBets);
   }
 }
